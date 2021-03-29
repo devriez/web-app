@@ -1,0 +1,32 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'main\css\main.css' %}" rel="stylesheet">
+    <link href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFR2MGlEbWxUQ2pEMXVKbzM5WkRlZGdMLUpqUXxBQ3Jtc0tsU1dNc0xldXVRNm1zUDNxZzFqbFlNdktnR2VLSDNmUGh6Y01uM3AySGItdkVJejNHc0VqZDZyQ2JZa3J1bnZ6amVaU3I2dS1xRXVKSVl6TzdBcGtUUTNEZkZyWDBaeDRqaFRHVHBuVEI4WW1OYjl5cw&q=https%3A%2F%2Fuse.fontawesome.com%2Freleases%2Fv5.8.2%2Fcss%2Fall.css" rel="stylesheet">
+</head>
+<body>
+    <aside>
+        <img src="{% static 'main\img\tiger.jpg' %}">
+        <span class="'logo">itProger</span>
+        <h3>Навигация</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li><i class="fas fa-home"></i>Главная</li></a>
+            <a href="{% url 'about' %}"><li><i class="fas fa-address-card"></i>Про нас</li></a>
+            <a href="{% url 'news_home' %}"><li><i class="fas fa-address-card"></i>Новости</li></a>
+            <a href=""><li><i class="fas fa-id-card-alt"></i>Контакты</li></a>
+            <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить новость</button></li></a>
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
